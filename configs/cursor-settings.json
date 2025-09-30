@@ -1,0 +1,233 @@
+{
+  "window.commandCenter": true,
+  "mcp.servers": {
+    "firecrawl": {
+      "command": "firecrawl-mcp",
+      "env": {
+        "FIRECRAWL_API_KEY": "your_firecrawl_api_key_here"
+      }
+    },
+    "github": {
+      "command": "github-mcp-scoped-server",
+      "env": {
+        "GITHUB_TOKEN": "your_github_token_here",
+        "GITHUB_TARGET_USER": "github"
+      }
+    },
+    "browser": {
+      "command": "concurrent-browser-mcp",
+      "args": ["--headless", "--max-instances", "5"]
+    },
+    "figma": {
+      "command": "node",
+      "args": ["-e", "console.log('Figma MCP placeholder')"],
+      "env": {
+        "FIGMA_TOKEN": "your_figma_token_here"
+      }
+    },
+    "atlassian": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"],
+      "env": {
+        "ATLASSIAN_API_TOKEN": "${env:ATLASSIAN_API_TOKEN}"
+      }
+    },
+    "aws-knowledge": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      }
+    },
+    "browserbase": {
+      "command": "npx",
+      "args": ["-y", "@browserbasehq/mcp"],
+      "env": {
+        "BROWSERBASE_API_KEY": "${env:BROWSERBASE_API_KEY}",
+        "BROWSERBASE_PROJECT_ID": "${env:BROWSERBASE_PROJECT_ID}"
+      }
+    },
+    "pearl": {
+      "command": "npx",
+      "args": ["-y", "pearl-mcp-server"],
+      "env": {
+        "PEARL_API_KEY": "${env:PEARL_API_KEY}"
+      }
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"],
+      "env": {
+        "LINEAR_API_KEY": "${env:LINEAR_API_KEY}"
+      }
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"],
+      "env": {
+        "NOTION_API_KEY": "${env:NOTION_API_KEY}"
+      }
+    },
+    "stripe": {
+      "command": "npx",
+      "args": ["-y", "stripe-mcp-server"],
+      "env": {
+        "STRIPE_SECRET_KEY": "${env:STRIPE_SECRET_KEY}"
+      }
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "slack-mcp-server"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${env:SLACK_BOT_TOKEN}"
+      }
+    },
+    "google-drive": {
+      "command": "npx",
+      "args": ["-y", "google-drive-mcp-server"],
+      "env": {
+        "GOOGLE_DRIVE_CREDENTIALS": "${env:GOOGLE_DRIVE_CREDENTIALS}"
+      }
+    },
+    "axiom": {
+      "command": "npx",
+      "args": ["-y", "axiom-mcp-server"],
+      "env": {
+        "AXIOM_API_TOKEN": "${env:AXIOM_API_TOKEN}"
+      }
+    },
+    "raygun": {
+      "command": "npx",
+      "args": ["-y", "raygun-mcp-server"],
+      "env": {
+        "RAYGUN_API_KEY": "${env:RAYGUN_API_KEY}"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "brave-search-mcp-server"],
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "${env:BRAVE_SEARCH_API_KEY}"
+      }
+    },
+    "qdrant": {
+      "command": "npx",
+      "args": ["-y", "qdrant-mcp-server"],
+      "env": {
+        "QDRANT_URL": "${env:QDRANT_URL}"
+      }
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "docker-mcp-server"]
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": ["-y", "kubernetes-mcp-server"],
+      "env": {
+        "KUBECONFIG": "${env:KUBECONFIG}"
+      }
+    },
+    "postgresql": {
+      "command": "npx",
+      "args": ["-y", "postgresql-mcp-server"],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "${env:POSTGRES_CONNECTION_STRING}"
+      }
+    },
+    "e2b": {
+      "command": "npx",
+      "args": ["-y", "e2b-mcp-server"],
+      "env": {
+        "E2B_API_KEY": "${env:E2B_API_KEY}"
+      }
+    }
+  },
+  "agent": {
+    "autoRun": false,
+    "autoApplyEdits": false,
+    "autoFixErrors": true,
+    "guardrails": {
+      "enabled": true,
+      "permissions": ["read", "write", "execute"],
+      "toolApproval": true
+    },
+    "performance": {
+      "maxConcurrentTasks": 5,
+      "timeout": 300,
+      "retryAttempts": 3,
+      "contextManagement": {
+        "maxContextUsage": 80,
+        "autoCompress": true,
+        "newTaskNewChat": true
+      }
+    }
+  },
+  "language": {
+    "default": "vi",
+    "supported": ["vi", "en", "zh", "ja", "ko"],
+    "culturalContext": {
+      "vietnam": {
+        "enabled": true,
+        "dateFormat": "dd/MM/yyyy",
+        "currency": "VND",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "businessFormality": "Kính chào anh/chị",
+        "technicalTerms": {
+          "algorithm": "Thuật toán",
+          "database": "Cơ sở dữ liệu",
+          "framework": "Framework",
+          "deployment": "Triển khai",
+          "architecture": "Kiến trúc",
+          "monitoring": "Giám sát",
+          "automation": "Tự động hóa",
+          "integration": "Tích hợp",
+          "optimization": "Tối ưu hóa"
+        }
+      }
+    }
+  },
+  "governance": {
+    "rules": {
+      "enabled": true,
+      "autoLoad": true,
+      "customCommands": {
+        "/management-review": "Kiểm tra quy trình quản lý",
+        "/compliance-check": "Kiểm tra tuân thủ",
+        "/architecture-analysis": "Phân tích kiến trúc",
+        "/cost-analysis": "Phân tích chi phí",
+        "/vietnamese-mode": "Chuyển sang chế độ tiếng Việt",
+        "/business-focus": "Tập trung vào kết quả kinh doanh"
+      }
+    },
+    "compliance": {
+      "forbiddenTerms": ["mission-critical", "seamless", "revolutionary", "game-changing"],
+      "requiredTone": "Professional, factual, Vietnamese",
+      "documentStructure": "Standardized format",
+      "managementFocus": true
+    }
+  },
+  "performance": {
+    "responseTime": {
+      "target": "<2s",
+      "warning": ">3s",
+      "critical": ">5s"
+    },
+    "accuracy": {
+      "target": "95%+",
+      "warning": "<90%",
+      "critical": "<85%"
+    },
+    "userSatisfaction": {
+      "target": "4.5/5",
+      "warning": "<4.0",
+      "critical": "<3.5"
+    },
+    "vietnameseAccuracy": {
+      "target": "98%+",
+      "warning": "<95%",
+      "critical": "<90%"
+    }
+  }
+}
