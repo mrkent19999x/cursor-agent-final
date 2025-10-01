@@ -1,6 +1,73 @@
 {
   "window.commandCenter": true,
   "mcp.servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "/workspace/data.db"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "brave-search-mcp-server"],
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "${env:BRAVE_SEARCH_API_KEY}"
+      }
+    },
+    "duckduckgo": {
+      "command": "npx",
+      "args": ["-y", "duckduckgo-mcp-server"]
+    },
+    "weather": {
+      "command": "npx",
+      "args": ["-y", "weather-mcp-server"],
+      "env": {
+        "WEATHER_API_KEY": "${env:WEATHER_API_KEY}"
+      }
+    },
+    "time": {
+      "command": "npx",
+      "args": ["-y", "time-mcp-server"]
+    },
+    "youtube": {
+      "command": "npx",
+      "args": ["-y", "youtube-mcp-server"],
+      "env": {
+        "YOUTUBE_API_KEY": "${env:YOUTUBE_API_KEY}"
+      }
+    },
+    "spotify": {
+      "command": "npx",
+      "args": ["-y", "spotify-mcp-server"],
+      "env": {
+        "SPOTIFY_CLIENT_ID": "${env:SPOTIFY_CLIENT_ID}",
+        "SPOTIFY_CLIENT_SECRET": "${env:SPOTIFY_CLIENT_SECRET}"
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "figma-mcp"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${env:FIGMA_ACCESS_TOKEN}"
+      }
+    },
     "firecrawl": {
       "command": "firecrawl-mcp",
       "env": {
@@ -51,81 +118,11 @@
         "KUBECONFIG": "${env:KUBECONFIG}"
       }
     },
-    "postgresql": {
-      "command": "npx",
-      "args": ["-y", "postgresql-mcp-server"],
-      "env": {
-        "POSTGRES_CONNECTION_STRING": "${env:POSTGRES_CONNECTION_STRING}"
-      }
-    },
     "sentry": {
       "command": "npx",
       "args": ["-y", "@sentry/mcp-server"],
       "env": {
-        "SENTRY_AUTH_TOKEN": "${env:SENTRY_AUTH_TOKEN}",
-        "SENTRY_ORG": "${env:SENTRY_ORG}",
-        "SENTRY_PROJECT": "${env:SENTRY_PROJECT}"
-      }
-    },
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
-      "env": {}
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
-      "env": {}
-    },
-    "notion": {
-      "command": "npx",
-      "args": ["-y", "@notionhq/notion-mcp-server"],
-      "env": {
-        "NOTION_API_KEY": "${env:NOTION_API_KEY}"
-      }
-    },
-    "heroku": {
-      "command": "npx",
-      "args": ["-y", "@heroku/mcp-server"],
-      "env": {
-        "HEROKU_API_KEY": "${env:HEROKU_API_KEY}"
-      }
-    },
-    "supabase": {
-      "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase"],
-      "env": {
-        "SUPABASE_URL": "${env:SUPABASE_URL}",
-        "SUPABASE_ANON_KEY": "${env:SUPABASE_ANON_KEY}"
-      }
-    },
-    "apify": {
-      "command": "npx",
-      "args": ["-y", "@apify/actors-mcp-server"],
-      "env": {
-        "APIFY_API_TOKEN": "${env:APIFY_API_TOKEN}"
-      }
-    },
-    "hubspot": {
-      "command": "npx",
-      "args": ["-y", "@hubspot/mcp-server"],
-      "env": {
-        "HUBSPOT_ACCESS_TOKEN": "${env:HUBSPOT_ACCESS_TOKEN}"
-      }
-    },
-    "tavily": {
-      "command": "npx",
-      "args": ["-y", "tavily-mcp"],
-      "env": {
-        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
-      }
-    },
-    "datadog": {
-      "command": "npx",
-      "args": ["-y", "@winor30/mcp-server-datadog"],
-      "env": {
-        "DATADOG_API_KEY": "${env:DATADOG_API_KEY}",
-        "DATADOG_APP_KEY": "${env:DATADOG_APP_KEY}"
+        "SENTRY_AUTH_TOKEN": "${env:SENTRY_AUTH_TOKEN}"
       }
     }
   },
