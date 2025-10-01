@@ -1,0 +1,215 @@
+{
+  "window.commandCenter": true,
+  "mcp.servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "/workspace/data.db"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "brave-search-mcp-server"],
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "${env:BRAVE_SEARCH_API_KEY}"
+      }
+    },
+    "duckduckgo": {
+      "command": "npx",
+      "args": ["-y", "duckduckgo-mcp-server"]
+    },
+    "weather": {
+      "command": "npx",
+      "args": ["-y", "weather-mcp-server"],
+      "env": {
+        "WEATHER_API_KEY": "${env:WEATHER_API_KEY}"
+      }
+    },
+    "time": {
+      "command": "npx",
+      "args": ["-y", "time-mcp-server"]
+    },
+    "youtube": {
+      "command": "npx",
+      "args": ["-y", "youtube-mcp-server"],
+      "env": {
+        "YOUTUBE_API_KEY": "${env:YOUTUBE_API_KEY}"
+      }
+    },
+    "spotify": {
+      "command": "npx",
+      "args": ["-y", "spotify-mcp-server"],
+      "env": {
+        "SPOTIFY_CLIENT_ID": "${env:SPOTIFY_CLIENT_ID}",
+        "SPOTIFY_CLIENT_SECRET": "${env:SPOTIFY_CLIENT_SECRET}"
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "figma-mcp"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${env:FIGMA_ACCESS_TOKEN}"
+      }
+    },
+    "firecrawl": {
+      "command": "firecrawl-mcp",
+      "env": {
+        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
+      }
+    },
+    "github": {
+      "command": "github-mcp-scoped-server",
+      "env": {
+        "GITHUB_TOKEN": "${env:GITHUB_TOKEN}",
+        "GITHUB_TARGET_USER": "github"
+      }
+    },
+    "browser": {
+      "command": "concurrent-browser-mcp",
+      "args": ["--headless", "--max-instances", "5"]
+    },
+    "browserbase": {
+      "command": "npx",
+      "args": ["-y", "@browserbasehq/mcp"],
+      "env": {
+        "BROWSERBASE_API_KEY": "${env:BROWSERBASE_API_KEY}",
+        "BROWSERBASE_PROJECT_ID": "${env:BROWSERBASE_PROJECT_ID}"
+      }
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "slack-mcp-server"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${env:SLACK_BOT_TOKEN}"
+      }
+    },
+    "qdrant": {
+      "command": "npx",
+      "args": ["-y", "qdrant-mcp-server"],
+      "env": {
+        "QDRANT_URL": "${env:QDRANT_URL}"
+      }
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["-y", "docker-mcp-server"]
+    },
+    "kubernetes": {
+      "command": "npx",
+      "args": ["-y", "kubernetes-mcp-server"],
+      "env": {
+        "KUBECONFIG": "${env:KUBECONFIG}"
+      }
+    },
+    "sentry": {
+      "command": "npx",
+      "args": ["-y", "@sentry/mcp-server"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${env:SENTRY_AUTH_TOKEN}"
+      }
+    }
+  },
+  "agent": {
+    "autoRun": false,
+    "autoApplyEdits": false,
+    "autoFixErrors": true,
+    "guardrails": {
+      "enabled": true,
+      "permissions": ["read", "write", "execute"],
+      "toolApproval": true
+    },
+    "performance": {
+      "maxConcurrentTasks": 5,
+      "timeout": 300,
+      "retryAttempts": 3,
+      "contextManagement": {
+        "maxContextUsage": 80,
+        "autoCompress": true,
+        "newTaskNewChat": true
+      }
+    }
+  },
+  "language": {
+    "default": "vi",
+    "supported": ["vi", "en", "zh", "ja", "ko"],
+    "culturalContext": {
+      "vietnam": {
+        "enabled": true,
+        "dateFormat": "dd/MM/yyyy",
+        "currency": "VND",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "businessFormality": "Kính chào anh/chị",
+        "technicalTerms": {
+          "algorithm": "Thuật toán",
+          "database": "Cơ sở dữ liệu",
+          "framework": "Framework",
+          "deployment": "Triển khai",
+          "architecture": "Kiến trúc",
+          "monitoring": "Giám sát",
+          "automation": "Tự động hóa",
+          "integration": "Tích hợp",
+          "optimization": "Tối ưu hóa"
+        }
+      }
+    }
+  },
+  "governance": {
+    "rules": {
+      "enabled": true,
+      "autoLoad": true,
+      "customCommands": {
+        "/management-review": "Kiểm tra quy trình quản lý",
+        "/compliance-check": "Kiểm tra tuân thủ",
+        "/architecture-analysis": "Phân tích kiến trúc",
+        "/cost-analysis": "Phân tích chi phí",
+        "/vietnamese-mode": "Chuyển sang chế độ tiếng Việt",
+        "/business-focus": "Tập trung vào kết quả kinh doanh"
+      }
+    },
+    "compliance": {
+      "forbiddenTerms": ["mission-critical", "seamless", "revolutionary", "game-changing"],
+      "requiredTone": "Professional, factual, Vietnamese",
+      "documentStructure": "Standardized format",
+      "managementFocus": true
+    }
+  },
+  "performance": {
+    "responseTime": {
+      "target": "<2s",
+      "warning": ">3s",
+      "critical": ">5s"
+    },
+    "accuracy": {
+      "target": "95%+",
+      "warning": "<90%",
+      "critical": "<85%"
+    },
+    "userSatisfaction": {
+      "target": "4.5/5",
+      "warning": "<4.0",
+      "critical": "<3.5"
+    },
+    "vietnameseAccuracy": {
+      "target": "98%+",
+      "warning": "<95%",
+      "critical": "<90%"
+    }
+  }
+}
