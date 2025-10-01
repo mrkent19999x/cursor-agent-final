@@ -4,41 +4,19 @@
     "firecrawl": {
       "command": "firecrawl-mcp",
       "env": {
-        "FIRECRAWL_API_KEY": "your_firecrawl_api_key_here"
+        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
       }
     },
     "github": {
       "command": "github-mcp-scoped-server",
       "env": {
-        "GITHUB_TOKEN": "your_github_token_here",
+        "GITHUB_TOKEN": "${env:GITHUB_TOKEN}",
         "GITHUB_TARGET_USER": "github"
       }
     },
     "browser": {
       "command": "concurrent-browser-mcp",
       "args": ["--headless", "--max-instances", "5"]
-    },
-    "figma": {
-      "command": "node",
-      "args": ["-e", "console.log('Figma MCP placeholder')"],
-      "env": {
-        "FIGMA_TOKEN": "your_figma_token_here"
-      }
-    },
-    "atlassian": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"],
-      "env": {
-        "ATLASSIAN_API_TOKEN": "${env:ATLASSIAN_API_TOKEN}"
-      }
-    },
-    "aws-knowledge": {
-      "command": "uvx",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
-      "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_DOCUMENTATION_PARTITION": "aws"
-      }
     },
     "browserbase": {
       "command": "npx",
@@ -48,67 +26,11 @@
         "BROWSERBASE_PROJECT_ID": "${env:BROWSERBASE_PROJECT_ID}"
       }
     },
-    "pearl": {
-      "command": "npx",
-      "args": ["-y", "pearl-mcp-server"],
-      "env": {
-        "PEARL_API_KEY": "${env:PEARL_API_KEY}"
-      }
-    },
-    "linear": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"],
-      "env": {
-        "LINEAR_API_KEY": "${env:LINEAR_API_KEY}"
-      }
-    },
-    "notion": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"],
-      "env": {
-        "NOTION_API_KEY": "${env:NOTION_API_KEY}"
-      }
-    },
-    "stripe": {
-      "command": "npx",
-      "args": ["-y", "stripe-mcp-server"],
-      "env": {
-        "STRIPE_SECRET_KEY": "${env:STRIPE_SECRET_KEY}"
-      }
-    },
     "slack": {
       "command": "npx",
       "args": ["-y", "slack-mcp-server"],
       "env": {
         "SLACK_BOT_TOKEN": "${env:SLACK_BOT_TOKEN}"
-      }
-    },
-    "google-drive": {
-      "command": "npx",
-      "args": ["-y", "google-drive-mcp-server"],
-      "env": {
-        "GOOGLE_DRIVE_CREDENTIALS": "${env:GOOGLE_DRIVE_CREDENTIALS}"
-      }
-    },
-    "axiom": {
-      "command": "npx",
-      "args": ["-y", "axiom-mcp-server"],
-      "env": {
-        "AXIOM_API_TOKEN": "${env:AXIOM_API_TOKEN}"
-      }
-    },
-    "raygun": {
-      "command": "npx",
-      "args": ["-y", "raygun-mcp-server"],
-      "env": {
-        "RAYGUN_API_KEY": "${env:RAYGUN_API_KEY}"
-      }
-    },
-    "brave-search": {
-      "command": "npx",
-      "args": ["-y", "brave-search-mcp-server"],
-      "env": {
-        "BRAVE_SEARCH_API_KEY": "${env:BRAVE_SEARCH_API_KEY}"
       }
     },
     "qdrant": {
@@ -136,11 +58,74 @@
         "POSTGRES_CONNECTION_STRING": "${env:POSTGRES_CONNECTION_STRING}"
       }
     },
-    "e2b": {
+    "sentry": {
       "command": "npx",
-      "args": ["-y", "e2b-mcp-server"],
+      "args": ["-y", "@sentry/mcp-server"],
       "env": {
-        "E2B_API_KEY": "${env:E2B_API_KEY}"
+        "SENTRY_AUTH_TOKEN": "${env:SENTRY_AUTH_TOKEN}",
+        "SENTRY_ORG": "${env:SENTRY_ORG}",
+        "SENTRY_PROJECT": "${env:SENTRY_PROJECT}"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
+      "env": {}
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "env": {}
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server"],
+      "env": {
+        "NOTION_API_KEY": "${env:NOTION_API_KEY}"
+      }
+    },
+    "heroku": {
+      "command": "npx",
+      "args": ["-y", "@heroku/mcp-server"],
+      "env": {
+        "HEROKU_API_KEY": "${env:HEROKU_API_KEY}"
+      }
+    },
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@supabase/mcp-server-supabase"],
+      "env": {
+        "SUPABASE_URL": "${env:SUPABASE_URL}",
+        "SUPABASE_ANON_KEY": "${env:SUPABASE_ANON_KEY}"
+      }
+    },
+    "apify": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server"],
+      "env": {
+        "APIFY_API_TOKEN": "${env:APIFY_API_TOKEN}"
+      }
+    },
+    "hubspot": {
+      "command": "npx",
+      "args": ["-y", "@hubspot/mcp-server"],
+      "env": {
+        "HUBSPOT_ACCESS_TOKEN": "${env:HUBSPOT_ACCESS_TOKEN}"
+      }
+    },
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "${env:TAVILY_API_KEY}"
+      }
+    },
+    "datadog": {
+      "command": "npx",
+      "args": ["-y", "@winor30/mcp-server-datadog"],
+      "env": {
+        "DATADOG_API_KEY": "${env:DATADOG_API_KEY}",
+        "DATADOG_APP_KEY": "${env:DATADOG_APP_KEY}"
       }
     }
   },
