@@ -1,0 +1,217 @@
+{
+  "reddit_communities": [
+    {
+      "name": "r/cursor",
+      "url": "https://www.reddit.com/r/cursor/",
+      "description": "Cộng đồng Reddit chính về Cursor AI",
+      "members": "10K+",
+      "activity": "Rất tích cực",
+      "topics": [
+        "Tutorials",
+        "Tips & Tricks",
+        "Bug Reports",
+        "Feature Requests"
+      ],
+      "language": "English",
+      "best_for": "Thảo luận chung, hỏi đáp nhanh"
+    },
+    {
+      "name": "r/cursorai",
+      "url": "https://www.reddit.com/r/cursorai/",
+      "description": "Cộng đồng chuyên về Cursor AI",
+      "members": "5K+",
+      "activity": "Tích cực",
+      "topics": [
+        "AI Features",
+        "Code Generation",
+        "Productivity Tips"
+      ],
+      "language": "English",
+      "best_for": "Thảo luận về tính năng AI"
+    },
+    {
+      "name": "r/MachineLearning",
+      "url": "https://www.reddit.com/r/MachineLearning/",
+      "description": "Cộng đồng Machine Learning lớn nhất",
+      "members": "2M+",
+      "activity": "Rất tích cực",
+      "topics": [
+        "AI Research",
+        "ML Tools",
+        "Cursor AI Discussions"
+      ],
+      "language": "English",
+      "best_for": "Thảo luận kỹ thuật sâu"
+    },
+    {
+      "name": "r/programming",
+      "url": "https://www.reddit.com/r/programming/",
+      "description": "Cộng đồng lập trình tổng quát",
+      "members": "4M+",
+      "activity": "Rất tích cực",
+      "topics": [
+        "Programming Tools",
+        "IDE Reviews",
+        "Cursor Discussions"
+      ],
+      "language": "English",
+      "best_for": "So sánh với các IDE khác"
+    }
+  ],
+  "discord_servers": [
+    {
+      "name": "Cursor Official Discord",
+      "invite": "https://discord.gg/cursor",
+      "description": "Server Discord chính thức của Cursor",
+      "members": "50K+",
+      "channels": [
+        "General",
+        "Help",
+        "Feature Requests",
+        "Showcase"
+      ],
+      "language": "English",
+      "best_for": "Hỗ trợ trực tiếp, thông báo mới"
+    },
+    {
+      "name": "AI Coding Tools Discord",
+      "invite": "https://discord.gg/aicoding",
+      "description": "Cộng đồng các công cụ AI cho lập trình",
+      "members": "20K+",
+      "channels": [
+        "Cursor",
+        "GitHub Copilot",
+        "ChatGPT",
+        "General"
+      ],
+      "language": "English",
+      "best_for": "So sánh các công cụ AI"
+    }
+  ],
+  "github_repositories": [
+    {
+      "name": "getcursor/cursor",
+      "url": "https://github.com/getcursor/cursor",
+      "description": "Repository chính của Cursor",
+      "stars": "50K+",
+      "language": "TypeScript",
+      "best_for": "Source code, issues, contributions"
+    },
+    {
+      "name": "cursor-ai/cursor",
+      "url": "https://github.com/cursor-ai/cursor",
+      "description": "Unofficial Cursor community repo",
+      "stars": "5K+",
+      "language": "Various",
+      "best_for": "Community extensions, plugins"
+    }
+  ],
+  "youtube_channels": [
+    {
+      "name": "Cursor AI Official",
+      "url": "https://www.youtube.com/@cursor-ai",
+      "description": "Kênh YouTube chính thức của Cursor",
+      "subscribers": "100K+",
+      "content": [
+        "Tutorials",
+        "Feature Demos",
+        "Updates"
+      ],
+      "language": "English",
+      "best_for": "Hướng dẫn chính thức"
+    },
+    {
+      "name": "Fireship",
+      "url": "https://www.youtube.com/@Fireship",
+      "description": "Kênh công nghệ nổi tiếng",
+      "subscribers": "3M+",
+      "content": [
+        "Cursor Reviews",
+        "AI Tools",
+        "Programming"
+      ],
+      "language": "English",
+      "best_for": "Reviews và so sánh"
+    },
+    {
+      "name": "Traversy Media",
+      "url": "https://www.youtube.com/@TraversyMedia",
+      "description": "Kênh lập trình nổi tiếng",
+      "subscribers": "2M+",
+      "content": [
+        "Cursor Tutorials",
+        "Web Development",
+        "AI Tools"
+      ],
+      "language": "English",
+      "best_for": "Tutorials chi tiết"
+    }
+  ],
+  "stack_overflow": [
+    {
+      "tag": "cursor-ai",
+      "url": "https://stackoverflow.com/questions/tagged/cursor-ai",
+      "description": "Tag Cursor AI trên Stack Overflow",
+      "questions": "500+",
+      "best_for": "Hỏi đáp kỹ thuật chuyên sâu"
+    },
+    {
+      "tag": "cursor-editor",
+      "url": "https://stackoverflow.com/questions/tagged/cursor-editor",
+      "description": "Tag Cursor Editor trên Stack Overflow",
+      "questions": "200+",
+      "best_for": "Vấn đề về editor"
+    }
+  ],
+  "other_platforms": [
+    {
+      "name": "Cursor Community Forum",
+      "url": "https://forum.cursor.com",
+      "description": "Forum chính thức của Cursor",
+      "best_for": "Thảo luận chính thức, feature requests"
+    },
+    {
+      "name": "Dev.to",
+      "url": "https://dev.to/t/cursor",
+      "description": "Cộng đồng developer",
+      "best_for": "Blog posts, tutorials, experiences"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com/tag/cursor-ai",
+      "description": "Platform viết blog",
+      "best_for": "Articles, tutorials, reviews"
+    },
+    {
+      "name": "Hashnode",
+      "url": "https://hashnode.com/n/cursor",
+      "description": "Developer blogging platform",
+      "best_for": "Technical articles, tutorials"
+    }
+  ],
+  "vietnamese_communities": [
+    {
+      "name": "Cộng đồng AI Việt Nam",
+      "url": "https://www.facebook.com/groups/aivietnam",
+      "description": "Group Facebook về AI tại Việt Nam",
+      "members": "50K+",
+      "language": "Tiếng Việt",
+      "best_for": "Thảo luận bằng tiếng Việt"
+    },
+    {
+      "name": "Lập trình viên Việt Nam",
+      "url": "https://www.facebook.com/groups/laptrinhvienvietnam",
+      "description": "Group lập trình viên lớn nhất VN",
+      "members": "200K+",
+      "language": "Tiếng Việt",
+      "best_for": "Hỏi đáp về công cụ lập trình"
+    },
+    {
+      "name": "Viblo",
+      "url": "https://viblo.asia/tags/cursor",
+      "description": "Platform chia sẻ kiến thức IT",
+      "language": "Tiếng Việt",
+      "best_for": "Bài viết tiếng Việt về Cursor"
+    }
+  ]
+}

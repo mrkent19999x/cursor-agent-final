@@ -1,0 +1,52 @@
+2025-10-25 08:53:31,259 - INFO - ====== WebDriver manager ======
+2025-10-25 08:53:31,334 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-25 08:53:31,538 - INFO - About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+2025-10-25 08:53:31,702 - INFO - Driver downloading response is 200
+2025-10-25 08:53:31,932 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-25 08:53:32,260 - INFO - Get LATEST chromedriver version for google-chrome
+2025-10-25 08:53:32,375 - INFO - Driver has been saved in cache [/home/ubuntu/.wdm/drivers/chromedriver/linux64/114.0.5735.90]
+2025-10-25 08:53:32,487 - ERROR - ❌ Lỗi khởi tạo Selenium: Message: unknown error: cannot find Chrome binary
+Stacktrace:
+#0 0x5644b3a5a4e3 <unknown>
+#1 0x5644b3789c76 <unknown>
+#2 0x5644b37b0757 <unknown>
+#3 0x5644b37af029 <unknown>
+#4 0x5644b37edccc <unknown>
+#5 0x5644b37ed47f <unknown>
+#6 0x5644b37e4de3 <unknown>
+#7 0x5644b37ba2dd <unknown>
+#8 0x5644b37bb34e <unknown>
+#9 0x5644b3a1a3e4 <unknown>
+#10 0x5644b3a1e3d7 <unknown>
+#11 0x5644b3a28b20 <unknown>
+#12 0x5644b3a1f023 <unknown>
+#13 0x5644b39ed1aa <unknown>
+#14 0x5644b3a436b8 <unknown>
+#15 0x5644b3a43847 <unknown>
+#16 0x5644b3a53243 <unknown>
+#17 0x7f4620bef7f1 <unknown>
+#18 0x7f4620c80b5c <unknown>
+
+2025-10-25 08:53:32,487 - INFO - 🚀 Bắt đầu cào web nâng cao...
+2025-10-25 08:53:32,487 - INFO - 🚀 Cào website chính với thông tin nâng cao...
+2025-10-25 08:53:32,487 - INFO - 📄 Cào trang: homepage
+2025-10-25 08:53:32,833 - INFO - ✅ Đã cào xong homepage: 40 headings, 24 sections
+2025-10-25 08:53:32,833 - INFO - 📄 Cào trang: features
+2025-10-25 08:53:33,127 - INFO - ✅ Đã cào xong features: 52 headings, 26 sections
+2025-10-25 08:53:33,128 - INFO - 📄 Cào trang: pricing
+2025-10-25 08:53:33,246 - INFO - ✅ Đã cào xong pricing: 54 headings, 6 sections
+2025-10-25 08:53:33,246 - INFO - 📄 Cào trang: docs
+2025-10-25 08:53:33,290 - INFO - ✅ Đã cào xong docs: 0 headings, 0 sections
+2025-10-25 08:53:33,291 - INFO - 📄 Cào trang: blog
+2025-10-25 08:53:33,368 - INFO - ✅ Đã cào xong blog: 12 headings, 0 sections
+2025-10-25 08:53:33,369 - INFO - 🌐 Bắt đầu cào các nguồn cộng đồng...
+2025-10-25 08:53:33,369 - INFO - 🔍 Cào Reddit: https://www.reddit.com/r/cursor/
+2025-10-25 08:53:35,422 - INFO - 🔍 Cào Reddit: https://www.reddit.com/r/cursorai/
+2025-10-25 08:53:37,468 - INFO - 🔍 Cào Reddit: https://www.reddit.com/r/MachineLearning/search/?q=cursor&restrict_sr=1&sort=new
+2025-10-25 08:53:39,508 - INFO - 🔍 Cào GitHub: https://github.com/getcursor/cursor
+2025-10-25 08:53:41,992 - INFO - 🔍 Cào GitHub: https://github.com/topics/cursor-ai
+2025-10-25 08:53:44,900 - INFO - 🔍 Cào YouTube: https://www.youtube.com/results?search_query=cursor+ai+tutorial
+2025-10-25 08:53:47,901 - INFO - 🔍 Cào YouTube: https://www.youtube.com/results?search_query=cursor+ai+review
+2025-10-25 08:53:50,901 - INFO - 💡 Trích xuất insights từ cộng đồng...
+2025-10-25 08:53:50,908 - INFO - 💾 Đã lưu dữ liệu nâng cao vào cursor_ai_library_advanced/
+2025-10-25 08:53:50,908 - INFO - ✅ Hoàn thành cào web nâng cao!
