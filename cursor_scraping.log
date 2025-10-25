@@ -1,0 +1,27 @@
+2025-10-25 08:19:52,403 - INFO - 🚀 Bắt đầu cào web cursor.com...
+2025-10-25 08:19:52,403 - INFO - 🚀 Bắt đầu cào trang chủ cursor.com...
+2025-10-25 08:19:52,647 - INFO - ✅ Đã cào xong trang chủ: 28 tiêu đề, 0 tính năng
+2025-10-25 08:19:52,648 - INFO - 🔍 Tìm kiếm các trang con quan trọng...
+2025-10-25 08:19:52,820 - INFO - 📋 Tìm thấy 11 trang con quan trọng
+2025-10-25 08:19:52,820 - INFO - 📄 Cào trang 1/10: skip to content
+2025-10-25 08:19:52,989 - INFO - ✅ Đã cào xong: Cursor: The best way to code with AI
+2025-10-25 08:19:54,990 - INFO - 📄 Cào trang 2/10: features
+2025-10-25 08:19:55,191 - INFO - ✅ Đã cào xong: Features · Cursor
+2025-10-25 08:19:57,191 - INFO - 📄 Cào trang 3/10: pricing
+2025-10-25 08:19:57,296 - INFO - ✅ Đã cào xong: Pricing · Cursor
+2025-10-25 08:19:59,296 - INFO - 📄 Cào trang 4/10: blog
+2025-10-25 08:19:59,359 - INFO - ✅ Đã cào xong: Blog · Cursor
+2025-10-25 08:20:01,359 - INFO - 📄 Cào trang 5/10: docs
+2025-10-25 08:20:01,419 - INFO - ✅ Đã cào xong: Cursor Docs
+2025-10-25 08:20:03,420 - INFO - 📄 Cào trang 6/10: agent turns ideas into codea human-ai programmer, orders of magnitude more effective than any developer alone.learn about agent →
+2025-10-25 08:20:03,614 - INFO - ✅ Đã cào xong: Features · Cursor
+2025-10-25 08:20:05,615 - INFO - 📄 Cào trang 7/10: magically accurate autocompleteour custom tab model predicts your next action with striking speed and precision.learn about tab →
+2025-10-25 08:20:05,827 - INFO - ✅ Đã cào xong: Features · Cursor
+2025-10-25 08:20:07,827 - INFO - 📄 Cào trang 8/10: everywhere software gets builtcursor is in github reviewing your prs, a teammate in slack, and anywhere else you work.learn about cursor’s ecosystem →
+2025-10-25 08:20:08,088 - INFO - ✅ Đã cào xong: Features · Cursor
+2025-10-25 08:20:10,089 - INFO - 📄 Cào trang 9/10: improving cursor tab with online rlour new tab model makes 21% fewer suggestions while having 28% higher accept rate.research · sep 12, 2025
+2025-10-25 08:20:10,234 - INFO - ✅ Đã cào xong: Improving Cursor Tab with online RL · Cursor
+2025-10-25 08:20:12,234 - INFO - 📄 Cào trang 10/10: 1.5x faster moe training with custom mxfp8 kernelsachieving a 3.5x moe layer speedup with a complete rebuild for blackwell gpus.research · aug 29, 2025
+2025-10-25 08:20:12,502 - INFO - ✅ Đã cào xong: 1.5x faster MoE training with custom MXFP8 kernels · Cursor
+2025-10-25 08:20:14,510 - INFO - 💾 Đã lưu dữ liệu vào cursor_ai_library/
+2025-10-25 08:20:14,510 - INFO - ✅ Hoàn thành cào web! Dữ liệu đã được lưu vào cursor_ai_library/
