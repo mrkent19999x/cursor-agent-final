@@ -1,0 +1,238 @@
+/**
+ * PWA Viewport Fix CSS
+ * Fix viewport full screen, safe area insets, và màu xanh lòi ra
+ */
+
+/* ============================================
+   1. RESET & BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Fix cho iOS Safari - quan trọng! */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+body {
+  /* Background màu này sẽ hiện ở safe area */
+  /* Đổi thành màu giống app của bạn để tránh màu xanh lòi ra */
+  background-color: #000000;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* ============================================
+     QUAN TRỌNG: Safe Area Insets
+     ============================================ */
+  /* iOS 11.2+ */
+  padding: env(safe-area-inset-top) 
+           env(safe-area-inset-right) 
+           env(safe-area-inset-bottom) 
+           env(safe-area-inset-left);
+  
+  /* iOS 11.0-11.1 (fallback) */
+  padding-top: constant(safe-area-inset-top);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+}
+
+/* ============================================
+   2. CONTAINER CHÍNH
+   ============================================ */
+#app,
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  /* Đảm bảo không bị cắt */
+  min-height: 100vh;
+  min-height: -webkit-fill-available; /* iOS Safari fix */
+  
+  background-color: #ffffff; /* Màu background app */
+  overflow: hidden;
+}
+
+/* ============================================
+   3. HEADER với Safe Area
+   ============================================ */
+.header,
+.app-header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem;
+  
+  /* Safe area top (notch) */
+  padding-top: calc(1rem + env(safe-area-inset-top));
+  padding-top: calc(1rem + constant(safe-area-inset-top)); /* iOS 11 */
+  
+  /* Safe area left/right nếu cần */
+  padding-left: calc(1rem + env(safe-area-inset-left));
+  padding-left: calc(1rem + constant(safe-area-inset-left));
+  padding-right: calc(1rem + env(safe-area-inset-right));
+  padding-right: calc(1rem + constant(safe-area-inset-right));
+}
+
+/* ============================================
+   4. CONTENT AREA (Có thể scroll)
+   ============================================ */
+.content,
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scroll iOS */
+  
+  background-color: #ffffff;
+  padding: 1rem;
+  
+  /* Safe area left/right nếu cần */
+  padding-left: calc(1rem + env(safe-area-inset-left));
+  padding-left: calc(1rem + constant(safe-area-inset-left));
+  padding-right: calc(1rem + env(safe-area-inset-right));
+  padding-right: calc(1rem + constant(safe-area-inset-right));
+}
+
+/* ============================================
+   5. FOOTER với Safe Area
+   ============================================ */
+.footer,
+.app-footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem;
+  
+  /* Safe area bottom (home indicator) */
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  padding-bottom: calc(1rem + constant(safe-area-inset-bottom)); /* iOS 11 */
+  
+  /* Safe area left/right nếu cần */
+  padding-left: calc(1rem + env(safe-area-inset-left));
+  padding-left: calc(1rem + constant(safe-area-inset-left));
+  padding-right: calc(1rem + env(safe-area-inset-right));
+  padding-right: calc(1rem + constant(safe-area-inset-right));
+}
+
+/* ============================================
+   6. UTILITY CLASSES
+   ============================================ */
+/* Safe area utilities */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+  padding-top: constant(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constant(safe-area-inset-bottom);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left);
+  padding-left: constant(safe-area-inset-left);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right);
+  padding-right: constant(safe-area-inset-right);
+}
+
+.safe-area-all {
+  padding: env(safe-area-inset-top) 
+           env(safe-area-inset-right) 
+           env(safe-area-inset-bottom) 
+           env(safe-area-inset-left);
+  padding-top: constant(safe-area-inset-top);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+}
+
+/* ============================================
+   7. FIX CHO FULLSCREEN MODE
+   ============================================ */
+@media (display-mode: fullscreen) {
+  body {
+    /* Có thể điều chỉnh nếu cần */
+  }
+}
+
+/* Standalone mode (PWA) */
+@media (display-mode: standalone) {
+  body {
+    /* Giữ nguyên safe area padding */
+  }
+}
+
+/* ============================================
+   8. FIX CHO CÁC BROWSER KHÁC NHAU
+   ============================================ */
+/* iOS Safari đặc biệt */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS specific fixes */
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Android Chrome */
+@media (display-mode: standalone) and (max-width: 768px) {
+  /* Android specific fixes nếu cần */
+}
+
+/* ============================================
+   9. PREVENT PULL-TO-REFRESH
+   ============================================ */
+/* CSS không thể prevent hoàn toàn, cần JS */
+/* Nhưng có thể giúp phần nào */
+body {
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+}
+
+/* ============================================
+   10. DEBUG HELPERS (Xóa khi production)
+   ============================================ */
+.debug-safe-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 0, 0, 0.3);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  z-index: 9999;
+  display: none; /* Ẩn khi production */
+  font-family: monospace;
+}
+
+/* Show debug khi có ?debug=1 trong URL */
+html:has([data-debug]) .debug-safe-area {
+  display: block;
+}
+
+/* ============================================
+   11. RESPONSIVE (Nếu cần)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Mobile specific styles */
+}
+
+@media (min-width: 769px) {
+  /* Desktop specific styles */
+  body {
+    /* Có thể bỏ safe area padding trên desktop */
+    padding: 0;
+  }
+}
