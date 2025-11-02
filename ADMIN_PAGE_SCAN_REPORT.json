@@ -1,0 +1,150 @@
+{
+  "urls_visited": [
+    "https://etaxfinal.vercel.app/admin/login",
+    "https://etaxfinal.vercel.app/admin/templates",
+    "https://etaxfinal.vercel.app/admin/content",
+    "https://etaxfinal.vercel.app/admin/field-definitions",
+    "https://etaxfinal.vercel.app/admin/documents/create",
+    "https://etaxfinal.vercel.app/admin/users",
+    "https://etaxfinal.vercel.app/admin"
+  ],
+  "menu_items": [
+    {
+      "text": "Dashboard",
+      "href": "/admin",
+      "selector": "nav a"
+    },
+    {
+      "text": "Quản lý Users",
+      "href": "/admin/users",
+      "selector": "nav a"
+    },
+    {
+      "text": "Templates",
+      "href": "/admin/templates",
+      "selector": "nav a"
+    },
+    {
+      "text": "Tạo chứng từ",
+      "href": "/admin/documents/create",
+      "selector": "nav a"
+    },
+    {
+      "text": "Content Blocks",
+      "href": "/admin/content",
+      "selector": "nav a"
+    },
+    {
+      "text": "Field Definitions",
+      "href": "/admin/field-definitions",
+      "selector": "nav a"
+    },
+    {
+      "text": "Dashboard",
+      "href": null,
+      "selector": "nav li"
+    },
+    {
+      "text": "Quản lý Users",
+      "href": null,
+      "selector": "nav li"
+    },
+    {
+      "text": "Templates",
+      "href": null,
+      "selector": "nav li"
+    },
+    {
+      "text": "Tạo chứng từ",
+      "href": null,
+      "selector": "nav li"
+    },
+    {
+      "text": "Content Blocks",
+      "href": null,
+      "selector": "nav li"
+    },
+    {
+      "text": "Field Definitions",
+      "href": null,
+      "selector": "nav li"
+    }
+  ],
+  "links_found": [
+    {
+      "text": "Dashboard",
+      "href": "/admin",
+      "full_url": "https://etaxfinal.vercel.app/admin"
+    },
+    {
+      "text": "Quản lý Users",
+      "href": "/admin/users",
+      "full_url": "https://etaxfinal.vercel.app/admin/users"
+    },
+    {
+      "text": "Templates",
+      "href": "/admin/templates",
+      "full_url": "https://etaxfinal.vercel.app/admin/templates"
+    },
+    {
+      "text": "Tạo chứng từ",
+      "href": "/admin/documents/create",
+      "full_url": "https://etaxfinal.vercel.app/admin/documents/create"
+    },
+    {
+      "text": "Content Blocks",
+      "href": "/admin/content",
+      "full_url": "https://etaxfinal.vercel.app/admin/content"
+    },
+    {
+      "text": "Field Definitions",
+      "href": "/admin/field-definitions",
+      "full_url": "https://etaxfinal.vercel.app/admin/field-definitions"
+    },
+    {
+      "text": "Tài khoản người dùng10",
+      "href": "/admin/users",
+      "full_url": "https://etaxfinal.vercel.app/admin/users"
+    },
+    {
+      "text": "Quản trị viên5",
+      "href": "/admin/users",
+      "full_url": "https://etaxfinal.vercel.app/admin/users"
+    },
+    {
+      "text": "Mapping MST0",
+      "href": "/admin/mappings",
+      "full_url": "https://etaxfinal.vercel.app/admin/mappings"
+    },
+    {
+      "text": "Preview Mode🆕",
+      "href": "/admin/preview",
+      "full_url": "https://etaxfinal.vercel.app/admin/preview"
+    },
+    {
+      "text": "Quản lý UsersTạo, sửa, xóa người dùng",
+      "href": "/admin/users",
+      "full_url": "https://etaxfinal.vercel.app/admin/users"
+    },
+    {
+      "text": "Quản lý TemplatesTạo và chỉnh sửa PDF templates",
+      "href": "/admin/templates",
+      "full_url": "https://etaxfinal.vercel.app/admin/templates"
+    },
+    {
+      "text": "Preview ModeXem và chỉnh sửa như user",
+      "href": "/admin/preview",
+      "full_url": "https://etaxfinal.vercel.app/admin/preview"
+    }
+  ],
+  "buttons_found": [
+    {
+      "text": "Đăng xuất",
+      "id": null,
+      "class": "flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded",
+      "onclick": null
+    }
+  ],
+  "text_content": "Admin Dashboard\nPhuc Tran\nĐăng xuất\nDashboard\nQuản lý Users\nTemplates\nTạo chứng từ\nContent Blocks\nField Definitions\nDashboard\n\nQuản lý hệ thống eTax\n\nTài khoản người dùng\n\n10\n\nQuản trị viên\n\n5\n\nMapping MST\n\n0\n\nPreview Mode\n\n🆕\n\nQuick Actions\n\nQuản lý Users\n\nTạo, sửa, xóa người dùng\n\nQuản lý Templates\n\nTạo và chỉnh sửa PDF templates\n\nPreview Mode\n\nXem và chỉnh sửa như user",
+  "ffc_indicators": []
+}
