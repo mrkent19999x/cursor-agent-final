@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Cursor Agent - Cẩm Nang Toàn Diện</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --bg: #ffffff;
+            --bg-dark: #0f172a;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .nav {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .nav li {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s;
+        }
+
+        .nav li:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .nav a:hover {
+            color: var(--primary);
+        }
+
+        .content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .card {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .badge-new {
+            background: var(--success);
+            color: white;
+        }
+
+        .badge-popular {
+            background: var(--accent);
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quick-link {
+            background: linear-gradient(135deg, #f8fafc, white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .quick-link:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .quick-link h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .nav ul {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Cursor Agent - Cẩm Nang Toàn Diện</h1>
+            <p>Chuyên gia Cursor 30 năm | Cập nhật: 2025-11-05 | Version 2.0</p>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#models">🤖 Models (8+ AI Models)</a></li>
+                <li><a href="#quickstart">⚡ Quick Start</a></li>
+                <li><a href="#setup">⚙️ Setup Guides</a></li>
+                <li><a href="#advanced">🚀 Advanced Features</a></li>
+                <li><a href="#research">🔬 Research & Insights</a></li>
+                <li><a href="#community">🌐 Community</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="overview">
+                <h2>📊 Tổng Quan</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>8+</h3>
+                        <p>AI Models</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>50+</h3>
+                        <p>MCP Servers</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>3</h3>
+                        <p>Custom Modes</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>20+</h3>
+                        <p>Guides</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="models">
+                <h2>🤖 Models Mới Nhất 2025</h2>
+                <div class="card">
+                    <h3>GPT-5 Series <span class="badge badge-new">NEW</span></h3>
+                    <p><strong>Context:</strong> 272k tokens</p>
+                    <p><strong>Features:</strong> Agent, Thinking, Image</p>
+                    <p><strong>Models:</strong> GPT-5, GPT-5 Fast, GPT-5-Codex</p>
+                </div>
+                <div class="card">
+                    <h3>Claude 4.5 Sonnet <span class="badge badge-new">NEW</span></h3>
+                    <p><strong>Context:</strong> 200k (default), <strong>1M (Max Mode)</strong> ⭐</p>
+                    <p><strong>Features:</strong> Agent, Thinking, Image</p>
+                    <p><strong>Best for:</strong> Large context, complex reasoning</p>
+                </div>
+                <div class="card">
+                    <h3>Gemini 2.5 Pro <span class="badge badge-new">NEW</span></h3>
+                    <p><strong>Context:</strong> 200k (default), <strong>1M (Max Mode)</strong> ⭐</p>
+                    <p><strong>Features:</strong> Agent, Thinking, Image</p>
+                    <p><strong>Best for:</strong> Multimodal tasks, Google ecosystem</p>
+                </div>
+            </section>
+
+            <section id="quickstart">
+                <h2>⚡ Quick Start - 5 Phút</h2>
+                <div class="quick-links">
+                    <a href="02_SETUP_GUIDES/quick-start.md" class="quick-link">
+                        <h4>1️⃣ Download & Install</h4>
+                        <p>Cài đặt Cursor trong 2 phút</p>
+                    </a>
+                    <a href="02_SETUP_GUIDES/quick-start.md#project" class="quick-link">
+                        <h4>2️⃣ Mở Project</h4>
+                        <p>Clone hoặc mở project có sẵn</p>
+                    </a>
+                    <a href="02_SETUP_GUIDES/quick-start.md#tab" class="quick-link">
+                        <h4>3️⃣ Tab Autocomplete</h4>
+                        <p>Thử Tab suggestions</p>
+                    </a>
+                    <a href="02_SETUP_GUIDES/quick-start.md#inline" class="quick-link">
+                        <h4>4️⃣ Inline Edit</h4>
+                        <p>Chỉnh sửa code với Ctrl+K</p>
+                    </a>
+                    <a href="02_SETUP_GUIDES/quick-start.md#agent" class="quick-link">
+                        <h4>5️⃣ Agent Chat</h4>
+                        <p>Chat với AI Agent</p>
+                    </a>
+                </div>
+            </section>
+
+            <section id="setup">
+                <h2>⚙️ Setup Guides</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Guide</th>
+                            <th>Mô tả</th>
+                            <th>Thời gian</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Quick Start</strong></td>
+                            <td>Bắt đầu trong 5 phút</td>
+                            <td>5 phút</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Installation</strong></td>
+                            <td>Cài đặt chi tiết</td>
+                            <td>10 phút</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MCP Servers</strong></td>
+                            <td>Setup MCP servers</td>
+                            <td>15 phút</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Configuration</strong></td>
+                            <td>Cấu hình nâng cao</td>
+                            <td>20 phút</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Keys</strong></td>
+                            <td>Quản lý API keys</td>
+                            <td>10 phút</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="advanced">
+                <h2>🚀 Advanced Features</h2>
+                <div class="card">
+                    <h3>Custom Modes <span class="badge badge-popular">POPULAR</span></h3>
+                    <p>Tạo mode riêng cho workflow của bạn:</p>
+                    <ul>
+                        <li><strong>Manager Mode</strong> - Quản lý dự án</li>
+                        <li><strong>Automation Mode</strong> - Tự động hóa</li>
+                        <li><strong>Research Mode</strong> - Nghiên cứu</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Agents</h3>
+                    <p>Agent capabilities:</p>
+                    <ul>
+                        <li>✅ Auto-run tools</li>
+                        <li>✅ Auto-apply edits</li>
+                        <li>✅ Auto-fix errors</li>
+                        <li>✅ Context awareness</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Memory System</h3>
+                    <p>Lưu trữ và nhớ context:</p>
+                    <ul>
+                        <li>Project-scoped memories</li>
+                        <li>Auto-generated from conversations</li>
+                        <li>User approval required</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="links">
+                <h2>🔗 Liên Kết Nhanh</h2>
+                <div class="quick-links">
+                    <a href="https://docs.cursor.com" target="_blank" class="quick-link">
+                        <h4>📖 Official Docs</h4>
+                        <p>docs.cursor.com</p>
+                    </a>
+                    <a href="https://forum.cursor.com" target="_blank" class="quick-link">
+                        <h4>💬 Forum</h4>
+                        <p>forum.cursor.com</p>
+                    </a>
+                    <a href="https://www.cursor.com/changelog" target="_blank" class="quick-link">
+                        <h4>📊 Changelog</h4>
+                        <p>Updates mới nhất</p>
+                    </a>
+                    <a href="https://github.com/getcursor/cursor" target="_blank" class="quick-link">
+                        <h4>🐙 GitHub</h4>
+                        <p>Source code</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p><strong>Cursor Agent Knowledge Base</strong></p>
+            <p>Tạo bởi: Cipher - Chuyên gia Cursor 30 năm</p>
+            <p>Dành cho: Anh Nghĩa - Product Owner</p>
+            <p>Cập nhật: 2025-11-05 | Version 2.0</p>
+        </footer>
+    </div>
+</body>
+</html>
