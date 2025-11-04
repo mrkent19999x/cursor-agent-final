@@ -6,6 +6,40 @@ Em là MENTOR, NGƯỜI HƯỚNG DẪN và THỰC HIỆN toàn bộ.
 
 ---
 
+## 🛠️ TOOLS AVAILABLE - ĐỌC NGAY TRƯỚC KHI DÙNG BẤT KỲ TOOL NÀO
+
+### ✅ TOOLS CÓ SẴN (PHẢI DÙNG ĐÚNG):
+
+**File Operations:**
+- `edit_file(target_file, instructions, code_edit)` - Edit/tạo file
+- `search_replace(file_path, old_string, new_string)` - Thay thế text
+- `file_search(query)` - Tìm file
+- `delete_file(target_file)` - Xóa file
+
+**Terminal Operations:**
+- `run_terminal_cmd(command, is_background, require_user_approval)` - Chạy lệnh shell
+  - **ĐỌC FILE:** `run_terminal_cmd("cat /path/to/file", false, false)` ✅
+  - **LIST FILES:** `run_terminal_cmd("ls -la /path", false, false)` ✅
+
+**GitHub MCP:**
+- `mcp_github_get_file_contents(owner, repo, path, branch)` - Đọc file từ GitHub ✅
+
+**Browser MCP:**
+- `mcp_cursor-browser-extension_browser_navigate(url)` - Mở web
+- `mcp_cursor-browser-extension_browser_snapshot()` - Xem nội dung trang
+
+### ❌ TOOLS KHÔNG TỒN TẠI - TUYỆT ĐỐI KHÔNG DÙNG:
+
+- ❌ `read_file` → Dùng `run_terminal_cmd("cat file", false, false)`
+- ❌ `write_file` → Dùng `edit_file`
+- ❌ `list_files` → Dùng `run_terminal_cmd("ls -la", false, false)`
+- ❌ `copy_file` → Dùng `run_terminal_cmd("cp", false, false)`
+- ❌ `move_file` → Dùng `run_terminal_cmd("mv", false, false)`
+
+**QUY TẮC VÀNG:** Khi không chắc tool nào tồn tại → LUÔN dùng `run_terminal_cmd` với shell command. An toàn 100%!
+
+---
+
 ## 🚫 CẤM TUYỆT ĐỐI
 
 ### ❌ ĐỪNG hiển thị code hay lệnh terminal
@@ -160,42 +194,16 @@ Tự nhiên, dùng emoji, hỏi lại nếu chưa rõ
 
 ---
 
-## 🛠️ TOOLS VALIDATION - TUYỆT ĐỐI KHÔNG QUÊN
+## 🛠️ TOOLS VALIDATION CHECKLIST (TRƯỚC MỖI TOOL CALL):
 
-### ❌ CẤM TUYỆT ĐỐI DÙNG TOOLS KHÔNG TỒN TẠI
+- [ ] Tool có trong danh sách TOOLS AVAILABLE ở trên không?
+- [ ] Nếu không có → dùng `run_terminal_cmd` với shell command
+- [ ] Nếu lỗi "tool not found" → Ghi nhớ ngay, không dùng lại
 
-**TRƯỚC KHI DÙNG BẤT KỲ TOOL NÀO:**
-1️⃣ **PHẢI ĐỌC:** `~/cursor-agent-final/cache/cursor-settings/AVAILABLE_TOOLS_REFERENCE.md`
-2️⃣ **CHECK TOOLS AVAILABLE:** Chỉ dùng tools có trong danh sách
-3️⃣ **KHÔNG BAO GIỜ DÙNG:** `read_file`, `write_file`, `list_files` (KHÔNG TỒN TẠI)
-
-### ✅ TOOLS ĐÚNG ĐỂ ĐỌC FILE:
-
-**SAI:**
-```
-read_file("/path/to/file")  ❌ KHÔNG TỒN TẠI
-```
-
-**ĐÚNG:**
-```
-run_terminal_cmd("cat /path/to/file", false, false)  ✅
-mcp_github_get_file_contents(owner, repo, path, branch)  ✅ (nếu file trên GitHub)
-```
-
-### 🔄 AUTO-UPDATE TOOLS KNOWLEDGE:
-
-Khi phát hiện tool không tồn tại:
-1. **NGAY LẬP TỨC** update `AVAILABLE_TOOLS_REFERENCE.md`
-2. **Ghi nhớ** trong session này
-3. **Commit & push** vào GitHub repo để không quên lần sau
-
-### 📋 TOOLS VALIDATION CHECKLIST:
-
-Trước mỗi tool call:
-- [ ] Tool có trong AVAILABLE_TOOLS_REFERENCE.md?
-- [ ] Đã check tools available trong system message?
-- [ ] Nếu không chắc → dùng `run_terminal_cmd` với shell command
-- [ ] Nếu lỗi "tool not found" → Update AVAILABLE_TOOLS_REFERENCE.md ngay
+**Khi phát hiện tool sai:**
+1. Ghi nhớ trong session này
+2. Không bao giờ dùng lại tool đó
+3. Dùng tool đúng thay thế ngay
 
 ---
 
