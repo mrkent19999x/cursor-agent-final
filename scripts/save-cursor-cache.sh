@@ -10,10 +10,11 @@ DATE=$(date +"%Y-%m-%d %H:%M:%S")
 TOPIC="$1"
 SOURCE="$2"  # docs, forum, github
 CONTENT_FILE="$3"
+URL="$4"     # Optional: URL của nguồn
 
 if [ -z "$TOPIC" ] || [ -z "$SOURCE" ]; then
-    echo "Usage: $0 <topic> <source> [content_file]"
-    echo "Example: $0 'custom-modes' 'docs' content.txt"
+    echo "Usage: $0 <topic> <source> [content_file] [url]"
+    echo "Example: $0 'custom-modes' 'docs' content.txt 'https://docs.cursor.com/agent/modes'"
     exit 1
 fi
 
@@ -40,12 +41,31 @@ fi
 
 echo "" >> "$FILEPATH"
 echo "## 🔗 Links" >> "$FILEPATH"
-echo "- Nguồn: [URL sẽ được thêm]" >> "$FILEPATH"
+if [ -n "$URL" ]; then
+    case "$SOURCE" in
+        docs)
+            echo "- Docs: [$URL]($URL)" >> "$FILEPATH"
+            ;;
+        forum)
+            echo "- Forum: [$URL]($URL)" >> "$FILEPATH"
+            ;;
+        github)
+            echo "- GitHub: [$URL]($URL)" >> "$FILEPATH"
+            ;;
+    esac
+else
+    echo "- Nguồn: [URL sẽ được thêm]" >> "$FILEPATH"
+fi
 
 # Commit và push
-cd "$REPO_DIR"
-git add "$FILEPATH"
+cd "$REPO_DIR" || exit 1
+git add "$FILEPATH" 2>/dev/null
 git commit -m "Cache: Update $TOPIC from $SOURCE - $DATE" 2>/dev/null
-git push origin main 2>/dev/null
 
-echo "✅ Đã lưu cache: $FILEPATH"
+# Push với error handling
+if git push origin main 2>/dev/null; then
+    echo "✅ Đã lưu cache và push: $FILEPATH"
+else
+    echo "⚠️ Đã lưu cache nhưng push thất bại. Check git credentials."
+    echo "📁 File đã được lưu tại: $FILEPATH"
+fi
